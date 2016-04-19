@@ -15,7 +15,7 @@ galleryContainer.innerHTML = '';
 // create slider containter
 var slider = document.createElement('div');
 
-// attach and ID to the slider
+// attach and id to the slider
 slider.id = 'slider';
 
 // add the slider to the browser
@@ -26,7 +26,7 @@ var previous = document.createElement('button');
 var next = document.createElement('button');
 
 
-// add some ID's to the buttons
+// add some id's to the buttons
 previous.id ='previous';
 next.id ='next';
 
@@ -39,5 +39,17 @@ slider.appendChild(previous);
 slider.appendChild(next);
 
 // show the first image to the visitor
-
 slider.style.backgroundImage = 'url('+ imageSources[0] +')';
+
+// listen for clicks on the buttons
+next.onclick = changePicture;
+previous.onclick = changePicture;
+
+function changePicture() {
+	// which image is in use?
+	var imageInUse = slider.style.backgroundImage;
+
+	// extract the url
+	var bits = imageInUse.split('"');
+	
+}
